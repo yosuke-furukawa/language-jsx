@@ -1,6 +1,6 @@
 {
   "name": "language-jsx",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./lib/jsx",
   "description": "JSX language support in Atom",
   "engines": {
