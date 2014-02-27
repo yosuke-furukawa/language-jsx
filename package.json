@@ -7,6 +7,9 @@
     "atom": "*",
     "node": "*"
   },
+  "activationEvents": [
+    "jsx:run"
+  ],
   "dependencies": {
     "jsx": "*"
   },
