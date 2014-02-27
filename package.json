@@ -1,0 +1,21 @@
+{
+  "name": "language-jsx",
+  "version": "0.0.1",
+  "main": "./lib/jsx",
+  "description": "JSX language support in Atom",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "dependencies": {
+    "jsx": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yosuke-furukawa/language-jsx.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yosuke-furukawa/language-jsx/issues"
+  }
+}

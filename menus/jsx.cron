@@ -1,0 +1,15 @@
+'context-menu':
+  '.overlayer':
+      'Enable language-jsx': 'jsx:run'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'jsx'
+      'submenu': [
+        { 'label': 'Run', 'command': 'jsx:run' }
+      ]
+    ]
+  }
+]
