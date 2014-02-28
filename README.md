@@ -2,7 +2,7 @@
 
 Adds syntax highlighting and snippets to JSX file in Atom.
 
-[JSX](http://jsx.github.io/) language is alternative jsx.
+[JSX](http://jsx.github.io/) language is alternative javascript.
 
 important: this is **not** React-jsx plugin
 
