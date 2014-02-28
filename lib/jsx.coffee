@@ -19,7 +19,7 @@ module.exports =
     unless node_path?
       console.error("Please set executable node directory in ~/.atom/config.cson")
       console.error(" 'language-jsx': ")
-      console.error(" 'nodepath': '/usr/local/bin' ")
+      console.error(" 'nodepath': '/usr/local/bin/node' ")
       return;
 
 
