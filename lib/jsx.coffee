@@ -5,6 +5,9 @@ module.exports =
   activate: (state) ->
     atom.workspaceView.command "jsx:run", => @run()
 
+  getExecPath: ->
+    "ATOM_SHELL_INTERNAL_RUN_AS_NODE=1 '#{process.execPath}'"
+
   getNodePath: ->
     atom.config.get("language-jsx.nodepath")
 
@@ -12,7 +15,7 @@ module.exports =
     editor = atom.workspace.getActiveEditor()
     lang_jsx_path = atom.packages.resolvePackagePath("language-jsx")
     jsx_bin = lang_jsx_path + jsx_bin_path
-    node_path = @getNodePath()
+    node_path = @getNodePath() || @getExecPath()
     unless node_path?
       console.error("Please set executable node directory in ~/.atom/config.cson")
       console.error(" 'language-jsx': ")
@@ -22,11 +25,10 @@ module.exports =
 
     uri = editor.getUri()
     child_process = require 'child_process'
-    process.env.PATH = "#{process.env.PATH}:#{node_path}"
-    command = "#{jsx_bin} --run " + uri
+    #process.env.PATH = "#{process.env.PATH}:#{node_path}"
+    command = "#{node_path} #{jsx_bin} --run #{uri}"
     options = {
-      "cwd" : lang_jsx_path,
-      "env" : process.env
+      "cwd" : lang_jsx_path
     }
     child_process.exec(command, options, (error, stdout, stderr) ->
         console.error(error) if error
