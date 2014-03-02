@@ -1,4 +1,5 @@
 jsx_bin_path = "/node_modules/jsx/bin/jsx"
+child_process = require 'child_process'
 
 module.exports =
 
@@ -16,16 +17,8 @@ module.exports =
     lang_jsx_path = atom.packages.resolvePackagePath("language-jsx")
     jsx_bin = lang_jsx_path + jsx_bin_path
     node_path = @getNodePath() || @getExecPath()
-    unless node_path?
-      console.error("Please set executable node directory in ~/.atom/config.cson")
-      console.error(" 'language-jsx': ")
-      console.error(" 'nodepath': '/usr/local/bin/node' ")
-      return;
-
 
     uri = editor.getUri()
-    child_process = require 'child_process'
-    #process.env.PATH = "#{process.env.PATH}:#{node_path}"
     command = "#{node_path} #{jsx_bin} --run #{uri}"
     options = {
       "cwd" : lang_jsx_path

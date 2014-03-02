@@ -1,4 +1,10 @@
 '.source.jsx':
+  'class':
+    'prefix': 'class'
+    'body': 'class ${1:class_name} {\n\n}'
+  'main':
+    'prefix': 'main'
+    'body': 'static function main(args : string[]) :void {\n\t${0:// body...}\n}'
   'Object key — key: "value"':
     'prefix': ':'
     'body': '${1:key}: ${2:"${3:value}"}${4:, }'
@@ -13,7 +19,7 @@
     'body': 'for (${1:variable} in ${2:object}) {\n\t${5:if (${3:object}.hasOwnProperty(${4:variable})) {\n\t\t$6\n\t\\}}\n}'
   'Function':
     'prefix': 'fun'
-    'body': 'function ${1:function_name}(${2:argument}) {\n\t${0:// body...}\n}'
+    'body': 'function ${1:function_name}(${2:argument}: ${3:type}) :${4:return_type} {\n\t${0:// body...}\n}'
   'Anonymous Function':
     'prefix': 'f'
     'body': 'function ($1) {\n\t$2\n}'
