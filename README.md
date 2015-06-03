@@ -1,3 +1,16 @@
+# PLEASE CONFIRM THIS FIRST
+
+This module have already unpublished on Atom Package Manager.
+So if you would like to uninstall this module, please use:
+
+```
+$ apm uninstall language-jsx
+```
+
+If someone would like to use this module, feel free to fork and republish.
+
+
+
 # JSX language support in Atom
 
 Adds syntax highlighting and snippets to JSX file in Atom.
